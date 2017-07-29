@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<a href="/dashboard">Home</a>
+<a href="/logout">Logout</a>
+<h1>Create A New Wish List Item</h1>
+	<h1>Register A New User</h1>
+	{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+	
+<form action="/addform" method="POST">
+	{% csrf_token %}
+	<input type="text" name="name">
+	<input type="submit" name="add">
+</form>
+</body>
+</html>

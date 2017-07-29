@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+<a href="/dashboard">Home</a>
+<a href="/logout">Logout</a>
+
+<h1>ItemNamePlaceHolder</h1>
+
+<h3>Users who've added this item to their wishlist</h3>
+	
+{% for x in users_for_item %}
+<h5>{{x.user.name}}</h5>
+{% endfor %}
+
+
+
+
+</body>
+</html>

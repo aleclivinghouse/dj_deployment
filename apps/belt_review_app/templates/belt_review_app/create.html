@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users New</title>
+</head>
+<body>
+<h2>Add a new user</h2>
+<form action="/dashboard" method="POST">
+	{% csrf_token %}
+	<p>Item/product: <input type="text" name="name"></p>
+	<input type="submit" name="add">
+</form>
+</body>
+</html>

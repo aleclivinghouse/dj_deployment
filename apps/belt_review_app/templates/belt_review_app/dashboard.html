@@ -1,0 +1,64 @@
+<html>
+<head>
+</head>
+	<h3>Hello {{request.session.user_name}}</h3>
+<body>
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Users Index</title>
+</head>
+<body>
+<a href="/logout">Logout</a>
+<a href="#">Home</a>
+<h1>Your WishList</h1>
+<table>
+	<tr>
+		<td>Item</td>
+		<td>Added By</td>
+		<td>Date Added</td>
+		<td>Actions</td>
+	</tr>
+	{% for x in your_items %}
+		<tr>
+			
+			<td><a href="/wish_items/{{x.item.id}}">{{x.item.name}}</a></td>
+			<td>{{x.user.name}}</td>
+			<td>{{x.item.created_at}}</td>
+			<td><a href="/{{x.id}}/deletewish">remove from my wishlist</a></td>
+			{% endfor %}
+			<td>
+			
+			</td>
+		</tr>
+	
+</table>
+<a href="/wish_items/add">Add a new item</a>
+	
+	
+<h1>Other People's WishList Items</h1>
+<table>
+	<tr>
+		<td>Item</td>
+		<td>Added By</td>
+		<td>Date Added</td>
+		<td>Actions</td>
+	</tr>
+	{% for x in other_pplitems %}
+		<tr>
+			<td><a href="/wish_items/{{x.item.id}}">{{x.item.name}}</a></td>
+			<td>{{x.user.name}}</td>
+			<td>{{x.item.created_at}}</td>
+			<td><a href="/{{x.id}}/addwish">add to my wishlist</a></td>
+			<td>
+			</td>
+		</tr>
+	{% endfor %}
+</table>	
+	
+	
+</body>
+</html>	
+	
+</body>
+</html>
